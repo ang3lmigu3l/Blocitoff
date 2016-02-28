@@ -30,5 +30,3 @@ group :development, :test do
   gem 'faker'
   gem 'factory_girl_rails'
 end
-
-gem 'bootstrap-sass'
