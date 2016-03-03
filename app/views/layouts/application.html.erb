@@ -9,11 +9,34 @@
 </head>
 <body>
   <div class="container">
+    <span class="notice"> <%= notice %> </span>
+    <span class="alert"> <%= alert %> </span>
     <ul class="nav nav-tabs">
       <li><%= link_to "Blocitoff", welcome_index_path %></li>
+      <li><%= link_to "About", welcome_about_path %> </li>
 
-    </ul>
+    <div class="pull-right user-info">
+      <li role="presentation" class="dropdown">
+  <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+    <% if user_signed_in? %>
+    <%= current_user.username.capitalize %> <span class="caret"></span>
+    <% else %>
+    Log in | Sign Up
+    <% end %>
+  </a>
+  <ul class="dropdown-menu">
+    <% if user_signed_in? %>
+  <li> <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %></li>
+  <li> <%= link_to "Sign Out", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %></li>
+<% else %>
+  <li><%= link_to "Sign Up", new_user_registration_path, :class => 'navbar-link'  %> </li>
+  <li><%= link_to "Sign In", new_user_session_path, :class => 'navbar-link'  %> </li>
+  </ul>
+<% end %>
+</div>
+</ul>
 <%= yield %>
   </div>
+
 </body>
 </html>
