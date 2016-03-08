@@ -13,7 +13,7 @@ before_action :authenticate_user!, only: [:new, :create]
       flash[:notice] = 'Item saved successfully.'
       redirect_to current_user
     else
-      flash[:notice] = 'Item not saved. Title is too short/missing. Please try again.'
+      flash[:notice] = 'Item not saved. Title is too short or missing. Please try again.'
       redirect_to(:back)
     end
   end

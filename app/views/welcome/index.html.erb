@@ -1,2 +1,6 @@
 <h1>Welcome To Bloccitoff</h1>
+<%if current_user %>
+<p> Hell, lets get starting making a To-do Item. </p>
+<% else %>
 <p> Helping you get things done! <%= link_to "Sign up", new_user_registration_path %> for a free Account! </p>
+<% end %>

@@ -1,11 +1,14 @@
-<% if current_user %>
+<% if current_user == @user %>
 <h1>Hello, <%= current_user.username.capitalize%>, </h1>
 <% else %>
 <h1><%= @user.username.capitalize%> To - Do List. </h1>
 <%end %>
 
 <h4> List of Items </h4>
+<% if current_user == @user %>
 <%= render :partial => 'items/form', :locals =>{:item => Item.new} %>
+<% end %>
+
 <% @user.items.order('created_at DESC').each do |item| %>
 <%= render :partial => 'items/item' , :locals => {:item => item } %>
 <% end %>
