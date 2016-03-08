@@ -2,7 +2,8 @@
   <div class="media-body">
     <small>
       <%= item.name.titleize %>
-      | submitted <%= time_ago_in_words(item.created_at) %><br>
+      | submitted <%= time_ago_in_words(item.created_at) %>  <%= link_to "Completed ", item, method: :delete, class: 'glyphicon glyphicon-ok' %><br>
     </small>
+
   </div>
 </div>
