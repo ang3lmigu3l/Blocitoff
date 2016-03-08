@@ -13,8 +13,13 @@
  *= require_tree .
  *= require_self
  */
-.user-info {
-  padding-top: 10px;
-}
+
 @import "bootstrap-sprockets";
  @import "bootstrap";
+
+ .col-md-8 {
+   background-color: #c9c9c9;
+  }
+.user-info {
+  padding-top: 10px;
+  }

@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
 
   protect_from_forgery with: :exception
-  before_action :authenticate_user!
+  
 
   before_action :configure_permitted_parameters, if: :devise_controller?
   protected
@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.for(:acount_update){|u| u.permit(:email, :password, :password_confirmation, :remember_me)}
   end
 
-  def after_sign_in_path_for(rosource)
+  def after_sign_in_path_for(resource)
       user_path(resource)
   end
 
