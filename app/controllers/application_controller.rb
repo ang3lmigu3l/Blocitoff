@@ -14,5 +14,8 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.for(:acount_update){|u| u.permit(:email, :password, :password_confirmation, :remember_me)}
   end
 
+  def after_sign_in_path_for(rosource)
+      user_path(resource)
+  end
 
 end
