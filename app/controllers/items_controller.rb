@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
 
-before_action :authenticate_user!, only: [:new, :create]
+before_action :authenticate_user!, only: [:new, :create, :destroy]
   def new
     @item = Item.new
   end
@@ -11,12 +11,30 @@ before_action :authenticate_user!, only: [:new, :create]
 
     if @item.save
       flash[:notice] = 'Item saved successfully.'
-      redirect_to current_user
     else
-      flash[:notice] = 'Item not saved. Title is too short or missing. Please try again.'
-      redirect_to(:back)
+      flash[:alert] = 'Item not saved. Title is too short or missing. Please try again.'
+    end
+    respond_to do |format|
+      format.html
+      format.js
     end
   end
+
+  def destroy
+    @item = Item.find(params[:id])
+    @item.user = current_user
+    if @item.destroy
+      flash[:notice] = "Item Completed"
+    else
+      flash[:alert] = "Item was unable to be marked completed "
+    end
+
+    respond_to do |format|
+      format.html
+      format.js
+    end
+  end
+
 
   def show
     @item = Item.find(params[:id])
