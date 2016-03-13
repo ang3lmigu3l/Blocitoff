@@ -14,6 +14,7 @@ before_action :authenticate_user!, only: [:new, :create, :destroy]
     else
       flash[:alert] = 'Item not saved. Title is too short or missing. Please try again.'
     end
+    
     respond_to do |format|
       format.html
       format.js

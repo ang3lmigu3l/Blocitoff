@@ -7,16 +7,12 @@
 <h4> List of Items </h4>
 <% if current_user == @user %>
 <div class='new_item'>
-<%= render :partial => 'items/form', :locals =>{:item => Item.new} %>
+<%= render :partial => 'items/form', :locals =>{:user => @user ,:item => Item.new} %>
 </div>
 <% end %>
 <div class='js-items'>
-  <%= render @user.items %>
+  <% @user.items.each do |item| %>
+  <%= render :partial => 'items/item' , :locals => {:item => item } %>
+
+  <% end %>
 </div>
-
-
-
-<% @user.items.each do |item| %>
-<%= render :partial => 'items/item' , :locals => {:item => item } %>
-
-<% end %>
