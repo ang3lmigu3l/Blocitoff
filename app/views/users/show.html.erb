@@ -12,7 +12,6 @@
 <% end %>
 <div class='js-items'>
   <% @user.items.each do |item| %>
-  <%= render :partial => 'items/item' , :locals => {:item => item } %>
-
+  <%= render :partial => 'items/item' , :locals => {:user => @user, :item => item } %>
   <% end %>
 </div>
