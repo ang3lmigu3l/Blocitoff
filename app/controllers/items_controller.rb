@@ -1,6 +1,11 @@
 class ItemsController < ApplicationController
 
 before_action :authenticate_user!, only: [:new, :create, :destroy]
+
+  def show
+    @item = Item.find(params[:id])
+  end
+
   def new
     @item = Item.new
   end
@@ -9,7 +14,6 @@ before_action :authenticate_user!, only: [:new, :create, :destroy]
     @user = User.find(params[:user_id])
     @item = @user.items.new(item_params)
     @new_item = Item.new
-
 
     if @item.save
       flash[:notice] = 'Item saved successfully.'
@@ -21,7 +25,6 @@ before_action :authenticate_user!, only: [:new, :create, :destroy]
       format.html
       format.js
     end
-
   end
 
   def destroy
@@ -39,10 +42,7 @@ before_action :authenticate_user!, only: [:new, :create, :destroy]
     end
   end
 
-
-  def show
-    @item = Item.find(params[:id])
-  end
+#____________________PRIVATE________________#
 
 private
 

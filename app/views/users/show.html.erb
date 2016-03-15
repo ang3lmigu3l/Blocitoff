@@ -2,16 +2,16 @@
 <h1>Hello, <%= current_user.username.capitalize%>, </h1>
 <% else %>
 <h1><%= @user.username.capitalize%> To - Do List. </h1>
-<%end %>
+<% end %>
 
 <h4> List of Items </h4>
 <% if current_user == @user %>
-<div class='new_item'>
-<%= render :partial => 'items/form', :locals =>{:user => @user ,:item => Item.new} %>
+<div class='new-item'>
+<%= render :partial => 'items/form', :locals =>{:user => @user, :item => Item.new} %>
 </div>
 <% end %>
 <div class='js-items'>
   <% @user.items.each do |item| %>
-  <%= render :partial => 'items/item' , :locals => {:user => @user, :item => item } %>
+  <%= render :partial => 'items/item', :locals =>{:user => @user, :item => item } %>
   <% end %>
 </div>
