@@ -4,9 +4,8 @@ root 'welcome#index'
 
   devise_for :users
   resources :users do
-    resources :items, only: [:create]
-  end
     resources :items
+  end
   get '/about'=> 'welcome#about'
 
 
