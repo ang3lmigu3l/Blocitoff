@@ -3,9 +3,9 @@
   <div class="media-body">
     <small>
       <%= item.name.titleize %>
-      | submitted <%= time_ago_in_words(item.created_at) %>
+      | <%= distance_of_time_in_words(Time.now , item.created_at + 7.days) %> Remaning.
       <% if current_user == @user %>
-      <%= link_to "Completed ", [@user, item], method: :delete,remote: true, class: 'glyphicon glyphicon-ok' %><br>
+      <%= link_to "Completed", [@user, item], method: :delete,remote: true, class: 'glyphicon glyphicon-ok' %><br>
       <% end %>
     </small>
   </div>
