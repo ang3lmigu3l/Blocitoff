@@ -8,6 +8,8 @@ before_action :authenticate_user!, only: [:new, :create, :destroy]
 
   def new
     @item = Item.new
+    @user = current_user
+    test = 'this is a test'
   end
 
   def create
