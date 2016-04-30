@@ -1,6 +1,9 @@
-<h1>Welcome To Bloccitoff</h1>
-<%if current_user %>
-<p> Hell, lets get starting making a To-do Item. </p>
+<% if current_user %>
+<p> Hello, lets get starting making a To-do Item. </p>
 <% else %>
-<p> Helping you get things done! <%= link_to "Sign up", new_user_registration_path %> for a free Account! </p>
+<div class="jumbotron">
+  <h1>Welcome To Bloccitoff</h1>
+  <p> Helping you get things done! <%= link_to "Sign up", new_user_registration_path %> for a free Account! </p>
+  <p><a class="btn btn-primary btn-lg" href="/about" role="button">Learn more</a></p>
+</div>
 <% end %>

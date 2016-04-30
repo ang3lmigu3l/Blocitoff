@@ -1,13 +1,13 @@
 <%= content_tag :div, class: 'media', id: "item-#{item.id}" do %>
 <div class="media">
   <div class="media-body">
-    <small>
-      <%= item.name.titleize %>
-      | <%= distance_of_time_in_words(Time.now , item.created_at + 7.days) %> Remaning.
-      <% if current_user == @user %>
-      <%= link_to "Completed", [@user, item], method: :delete,remote: true, class: 'glyphicon glyphicon-ok' %><br>
-      <% end %>
-    </small>
+    <% if current_user == @user %>
+    <%= link_to " ", [@user, item], method: :delete,remote: true, class: 'glyphicon glyphicon-pencil', title: 'Mark as complete'%>
+    <% end %>
+       <%= item.name.titleize %>
+      <div class="pull-right">
+      <%= distance_of_time_in_words(Time.now , item.created_at + 7.days) %> Remaning
+    </div>
   </div>
 </div>
 <% end %>

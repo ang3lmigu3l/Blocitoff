@@ -1,7 +1,9 @@
 <%= form_for [user, item], remote: true do |f|%>
-  <div class="form-group">
+  <div class="input-group">
     <%= f.label :name, class: 'sr-only' %>
     <%= f.text_field :name , class: 'form-control', placeholder: "Enter a new item " %>
+    <span class="input-group-btn">
+    <%= f.submit "Submit Item", class: 'btn btn-default' %>
+    </span>
   </div>
-  <%= f.submit "Submit Item", class: 'btn btn-primary pull-right' %>
 <% end %>

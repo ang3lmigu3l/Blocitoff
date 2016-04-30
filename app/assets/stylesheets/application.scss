@@ -17,9 +17,10 @@
 @import "bootstrap-sprockets";
  @import "bootstrap";
 
- .col-md-8 {
-   background-color: #c9c9c9;
-  }
+body {font-family: 'Raleway', sans-serif; background-color: #d9eff0}
+.container {background-color: #fff}
+.glyphicon:before { margin-right: 9px; } 
+
 .user-info {
   padding-top: 10px;
   }
