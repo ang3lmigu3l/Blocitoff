@@ -2,16 +2,6 @@ class ItemsController < ApplicationController
 
 before_action :authenticate_user!, only: [:new, :create, :destroy]
 
-  def show
-    @item = Item.find(params[:id])
-  end
-
-  def new
-    @item = Item.new
-    @user = current_user
-    test = 'this is a test'
-  end
-
   def create
     @user = User.find(params[:user_id])
     @item = @user.items.new(item_params)
@@ -31,7 +21,7 @@ before_action :authenticate_user!, only: [:new, :create, :destroy]
 
   def destroy
     @item = Item.find(params[:id])
-    @item.user = current_user
+    @user = current_user
     if @item.destroy
       flash[:notice] = "Item Completed"
     else

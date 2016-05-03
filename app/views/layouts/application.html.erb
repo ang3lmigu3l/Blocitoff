@@ -13,7 +13,7 @@
   <div class="container">
     <ul class="nav nav-tabs">
       <li><%= link_to "Blocitoff", root_path %></li>
-      <li><%= link_to "To-do List", user_path(current_user) %></li>
+      <% if user_signed_in? %> <li><%= link_to "To-do List", user_path(current_user) %></li><% end %>
       <li><%= link_to "About", about_path %> </li>
 
       <div class="pull-right user-info">
@@ -35,7 +35,7 @@
       </div>
     </ul>
     <center>  <span class="notice"> <%= notice %> </span></center>
-      <center> <span class="alert"> <%= alert %> </span></center> 
+      <center> <span class="alert"> <%= alert %> </span></center>
       <%= yield %>
 
   </div>
