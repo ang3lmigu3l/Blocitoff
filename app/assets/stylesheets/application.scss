@@ -17,10 +17,27 @@
 @import "bootstrap-sprockets";
  @import "bootstrap";
 
-body {font-family: 'Raleway', sans-serif; background-color: #d9eff0}
+body {font-family: 'Raleway', sans-serif; background-color: #e3e3e3
+}
 .container {background-color: #fff}
-.glyphicon:before { margin-right: 9px; } 
+.glyphicon:before { margin-right: 9px; }
 
 .user-info {
   padding-top: 10px;
   }
+
+  .nav {background-color: #00BCD4;}
+  .nav {}
+
+  .nav li a { color: white;}
+  .nav li a:hover { background-color: #0097A7; border: none;}
+
+ul.nav.nav-tabs li.dropdown.pull-right.open a.dropdown-toggle {background-color:#0097A7; ; color: white}
+.dropdown-menu li a {color:#727272}
+
+.panel.panel-default .panel-heading {background-color: #9068be; color: white}
+
+.col-md-3 {padding: 0px;}
+.col-md-7 {padding-left: 5px}
+.reminder {padding-top: 0px}
+.reminder li {}
