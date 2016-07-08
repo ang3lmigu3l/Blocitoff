@@ -1,2 +1,4 @@
 
-## Bloccit:a Reddit replica to teach the fundamentals of web development and Rails. 
+## Bloccit: A Self-discrupting To-do 
+
+A Simple To-Do App that aims to help you complete you To-Do item on a 7 day deadline. 
