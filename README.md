@@ -6,6 +6,9 @@
 
 
 ##A Simple To-Do App that aims to help you complete you To-Do item on a 7 day deadline. 
+
+Blocitoff allows the user to create and manage their to-do items as well as encouraging the user to complete them before they expire. Blocitoff was my first project going solo and it allowed me to follow a User Story tool to complete the tasks that was ask for.
+
   * Uses rake task to delete List items after seven days if not completed . (*)
   * Integrates Ajax to create and Delete to-do Items . 
   * User authentication through Devise gem .
@@ -18,4 +21,3 @@
 end
 ```
 
-Blocitoff allows the user to create and manage their to-do items as well as encouraging the user to complete them before they expire. Blocitoff was my first project going solo and it allowed me to follow a User Story tool to complete the tasks that was ask for.
